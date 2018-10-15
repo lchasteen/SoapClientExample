@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soap:Envelope xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'>
+  <soap:Header>
+    <MultiSpeakMsgHeader xmlns='http://www.multispeak.org/Version_3.0'>
+    </MultiSpeakMsgHeader>
+  </soap:Header>
+  <soap:Body>
+    <StakedWorkOrderNotification xmlns='http://www.multispeak.org/Version_3.0'>
+      <stakedWorkOrders>
+        <workOrder objectID='44444444444'>
+          <woNumber>44444444444</woNumber>
+          <county>Clarke</county>
+          <woType>NC</woType>
+          <stationList>
+            <station objectID='1'>
+              <extensions>
+                <constructionID>0</constructionID>
+              </extensions>
+              <assemblyList>
+                <assembly>
+                  <featureType>pole</featureType>
+                  <unitCode>W35</unitCode>
+                  <unitActn>C</unitActn>
+                  <unitLength>1</unitLength>
+                  <quantity>1</quantity>
+                </assembly>
+              </assemblyList>
+            </station>
+            <station objectID='2'>
+              <extensions>
+                <constructionID>1</constructionID>
+              </extensions>
+              <assemblyList>
+                <assembly>
+                  <unitCode>A1.01</unitCode>
+                  <unitActn>C</unitActn>
+                  <unitLength>1</unitLength>
+                  <quantity>1</quantity>
+                </assembly>
+                <assembly>
+                  <featureType>pole</featureType>
+                  <unitCode>W35</unitCode>
+                  <unitActn>C</unitActn>
+                  <unitLength>1</unitLength>
+                  <quantity>1</quantity>
+                </assembly>
+                <assembly>
+                  <featureType>ohPrimaryLine</featureType>
+                  <unitCode>W1/0ACSR</unitCode>
+                  <unitActn>C</unitActn>
+                  <unitLength>52</unitLength>
+                  <quantity>1</quantity>
+                </assembly>
+              </assemblyList>
+            </station>
+          </stationList>
+        </workOrder>
+      </stakedWorkOrders>
+    </StakedWorkOrderNotification>
+  </soap:Body>
+</soap:Envelope>
