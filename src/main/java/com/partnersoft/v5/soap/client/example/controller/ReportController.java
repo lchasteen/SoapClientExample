@@ -91,37 +91,7 @@ public class ReportController {
 	@GetMapping("/report/sample")
 	public String getSample(Model model) {
 		try {
-			StakedWorkOrderNotification swon = client.getWorkOrderNotification();
-
-			if (swon != null) {
-				ArrayOfWorkOrder awo = swon.getStakedWorkOrders();
-				if (awo != null) {
-					for (WorkOrder wo : awo.getWorkOrder()) {
-						log.info(wo.getAccountNumber());
-						log.info(wo.getActCode());
-						log.info(wo.getWoNumber());
-						log.info(wo.getCounty());
-						log.info(wo.getWoType());
-
-						ArrayOfStation aos = wo.getStationList();
-						if (aos == null) {
-							continue;
-						}
-						for (Station s : aos.getStation()) {
-							AssemblyList al = s.getAssemblyList();
-							if (al == null) {
-								continue;
-							}
-							for (Assembly as : al.getAssembly()) {
-								log.info(as.getFeatureType());
-								log.info(as.getUnitCode());
-								log.info(String.valueOf(as.getUnitLength()));
-							}
-						}
-
-					}
-				}
-			}
+			client.getStakedWorkOrderNotification();
 		}
 		catch (Exception e) {
 			log.error(e.getLocalizedMessage());

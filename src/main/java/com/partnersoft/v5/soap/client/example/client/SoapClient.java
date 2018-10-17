@@ -30,6 +30,7 @@ import com.partnersoft.v5.soap.client.example.multispeak.model.MultiSpeakMsgHead
 import com.partnersoft.v5.soap.client.example.multispeak.model.PingURL;
 import com.partnersoft.v5.soap.client.example.multispeak.model.PingURLResponse;
 import com.partnersoft.v5.soap.client.example.multispeak.model.StakedWorkOrderNotification;
+import com.partnersoft.v5.soap.client.example.multispeak.model.StakedWorkOrderNotificationResponse;
 
 
 /**
@@ -84,12 +85,23 @@ public class SoapClient extends WebServiceGatewaySupport {
 		}
 		return rah.getData();
 	}
+	
+	
+	public StakedWorkOrderNotificationResponse getStakedWorkOrderNotification() {
+		StakedWorkOrderNotification swan = getWorkOrderNotification();
+		
+		ResponseAndHeader<StakedWorkOrderNotificationResponse> rah = getResponse("GetStakedWorkOrderNotification", swan, StakedWorkOrderNotificationResponse.class);
+		if (rah == null) {
+			return null;
+		}
+		return rah.getData();
+	}
 
 	/**
 	 * Returns the {@link StakedWorkOrderNotification} from the class path file.
 	 * @return The {@link StakedWorkOrderNotification} from the class path file.
 	 */
-	public StakedWorkOrderNotification getWorkOrderNotification() {
+	private StakedWorkOrderNotification getWorkOrderNotification() {
 		StakedWorkOrderNotification result = null;
 		try {
 
